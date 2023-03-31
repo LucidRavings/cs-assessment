@@ -1,0 +1,10 @@
+arraysize - doublerAppend - doublerInsert
+extraLargeArray - 4.3371 ms - 1.3526865 s
+largeArray - 918.6 μs - 15.0743 ms
+mediumArray - 240.8 μs - 270 μs
+smallArray - 204.2 μs - 81.7 μs
+tinyArray - 160.8 μs - 62.5 μs
+
+doublerAppend scales well with larger numbers by only writing new data onto the end of an array.  Meanwhile, doublerInsert is seemingly more effecient with smaller arrays, but slows down drastically with arrays longer than 1000 due to its quadratic time complexity of having to rewrite each index of the entire array for each new index insert.
+
+In summary, doublerAppend would be ideal for most cases since the comparatively longer runtime of small arrays would be unnoticable for most applications.  However in cases where arrays are always small and efficiency is a priority, then doublerInsert could be used to achieve even faster proformance.
